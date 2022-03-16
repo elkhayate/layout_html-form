@@ -11,114 +11,176 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <script type="text/javascript" src="./main.js"></script>
-    <form action="https://mate-academy-form-lesson.herokuapp.com/create-application" method="post" >
-      <fieldset name="personal information">
+    <form class="form" action="https://mate-academy-form-lesson.herokuapp.com/create-application">
+      <fieldset class="fieldset">
         <legend>Personal information</legend>
-        <label for="surname">Surname:</label>
-        <input
-        maxlength="15"
-        minlength="3"
-        autocomplete="off"
-        id="surname"
-        name="surname"
-        type="text">
-        <br>
-        <label for="name">Name:</label>
-        <input
-        id="name"
-        name="name"
-        type="text"
-        autocomplete="off">
-        <br>
-        <label for="age">How old are You?</label>
-        <input
-        id = "age"
-        name="age"
-        type="text"
-        value="12"
-        autocomplete="off"
-        required
-        max="100"
-        min="1">
-        <br>
-        <label for="fulldate">Full date of birth:</label>
-        <input
-        id="fulldate"
-        name="fulldate"
-        type="date">
-        <br>
-        <label class="lastOne" for = "accept">I accept the term of the agreement</label>
-        <input
-        class="lastOne"
-        id="accept"
-        type="checkbox"
-        name="accept">
+        <label for="surname" class="label">
+          Surname:
+          <input
+            type="text"
+            name="surname"
+            id="surname"
+            class="surname"
+            autocomplete="off"
+          >
+        </label>
+        <label for="name" class="label">
+          Name:
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="name"
+            autocomplete="off"
+          >
+        </label>
+        <label for="age" class="label">
+          How old are You?
+          <input
+            type="number"
+            name="age"
+            id="age"
+            class="age"
+            min="1"
+            max="100"
+            value="12"
+          >
+        </label>
+        <label for="dob" class="label">
+          Full date of birth:
+          <input
+            type="date"
+            name="dob"
+            class="dob"
+            id="dob"
+          >
+        </label>
+        <label for="terms" class="label">
+          I accept the term of the agreement
+          <input
+            type="checkbox"
+            name="terms"
+            class="terms"
+            id="terms"
+            value="agree"
+          >
+        </label>
       </fieldset>
-      <br>
-      <fieldset>
+
+      <fieldset class="fieldset">
         <legend>Registration</legend>
-        <label for="e-mail">E-mail:</label>
-        <input
-        type="email"
-        id="e-mail"
-        name="e-mail"
-        placeholder="email@example.com">
-        <br>
-        <label class="lastOne" for="Pass">Password:</label>
-        <input
-        class="lastOne"
-        id="Pass"
-        name="Pass"
-        type="password">
+        <label for="email" class="label">
+          E-mail:
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="email"
+            placeholder="email@example.com"
+            required
+          >
+        </label>
+        <label for="password" class="label">
+          Password:
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="password"
+            minlength="6"
+            maxlength="18"
+          >
+        </label>
       </fieldset>
-      <br>
-      <fieldset>
-        <legend>An intersting fact about you!</legend>
-        <label>Do you love cats?</label>
-        <input type="radio" id="Yes" name="cats">
-        <label for="Yes">Yes</label>
-        <input type="radio" id="No" name="cats">
-        <label for="No">No</label>
-        <br>
-        <label for="Color">What is your favorite color?</label>
-        <input type="color" name="Color" id="Color">
-        <br>
-        <label for="Bed">What time do you go to bed?</label>
-        <input type="time" name="Bed" id="Bed">
-        <br>
-        <label for="Cars">What are your favorite brand of cars?</label>
-        <select id="Cars" name="Cars" multiple>
-          <option value="bmw">BMW</option>
-          <option value="audi">Audi</option>
-          <option value="lada">Lada</option>
-        </select>
-        <br>
-        <label   for="Rate">How do you rate our work?</label>
-        <input
-        value="0"
-        class="lastOne"
-        type="range"
-        name="Rate"
-        id="Rate">
+
+      <fieldset class="fieldset">
+        <legend>An interesting fact about you!</legend>
+        <label for="radio" class="label">
+          Do you love cats?
+          <input
+            type="radio"
+            name="loveCats"
+            id="loveCatsYes"
+            class="radio"
+            value="yes"
+          >Yes
+          <input
+            type="radio"
+            name="loveCats"
+            id="loveCatsNo"
+            class="radio"
+            value="no"
+          >No
+        </label>
+        <label for="color" class="label">
+          What is your favorite color?
+          <input
+            type="color"
+            name="favColor"
+            id="color"
+            class="color"
+          >
+        </label>
+        <label for="bed-time" class="label">
+          What time do you go to bed?
+          <input
+            type="time"
+            step="2"
+            name="bedTime"
+            id="bed-time"
+            class="bed-time"
+          >
+        </label>
+        <label for="fav-car" class="label">
+          What are your favorite brand of cars?
+          <select
+            name="favCar"
+            id="fav-car"
+            class="fav-car-list"
+            multiple
+          >
+            <option value="BMW">BMW</option>
+            <option value="Audi">Audi</option>
+            <option value="Lada">Lada</option>
+          </select>
+        </label>
+        <label for="rating" class="label">
+          How do you rate our work?
+          <input
+            type="range"
+            name="rating"
+            value="0"
+            id="rating"
+            class="rating"
+            min="0"
+            max="10"
+            step="1"
+          >
+        </label>
       </fieldset>
-      <br>
-      <fieldset>
+
+      <fieldset class="fieldset">
         <legend>Additional info:</legend>
-        <label for="Comments"> Comments:</label>
-        <textarea id="Comments" name="Comments"></textarea>
-        <br>
-        <label class="lastOne" for="Choice">Would you recommend us?</label>
-        <select
-        class="lastOne"
-        id="Choice"
-        name="Choice"
-        multiple>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
+        <label for="comments" class="label">
+          Comments:
+          <textarea
+            name="comments"
+            id="comments"
+            class="comments"
+            cols="20"
+            rows="2"
+          ></textarea>
+        </label>
+        <label for="name" class="label">
+          Would you recommend us?
+          <select name="recommendUs" id="recommend-us">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </label>
       </fieldset>
       <button type="submit">Submit</button>
     </form>
+    <script type="text/javascript" src="./main.js"></script>
   </body>
 </html>
